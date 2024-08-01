@@ -24,7 +24,7 @@ We provide the code for our implementation of POLICEd RL on several systems:
 
 
 ## Organization
-- [POLICEdRL](POLICEdRL) contains the project source code,
+- [code](code) contains the project source code,
 - [docs](docs) contains the code for our website.
 
 

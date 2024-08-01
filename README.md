@@ -11,7 +11,7 @@ To analytically verify constraint satisfaction, the policy is made affine in tha
 
 POLICEd RL guarantees that this space shuttle will never land with a vertical velocity higher than 6ft/s thanks to the green repulsive buffer.
 
-![POLICEd RL learns to reach the target while avoiding the constraint](media/shuttle_gif.gif)
+![POLICEd RL learns to land the shuttle softly](docs/static/videos/shuttle_gif.gif)
 
 
 We provide the code for our implementation of POLICEd RL on several systems:

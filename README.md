@@ -1,6 +1,6 @@
 # *POLICEd-RL:* Learning to Provably Satisfy High Relative Degree Constraints for Black-Box Systems
-Official Code Repository for the high relative degree POLICEd-RL Paper: https://arxiv.org/abs/2407.20456
- [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Overview
 Repository containing code to implement [high relative degree POLICEd RL](https://arxiv.org/pdf/2407.20456.pdf) presented at [CDC 2024](https://cdc2024.ieeecss.org/).

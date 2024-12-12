@@ -1,0 +1,103 @@
+{
+  "max_train_steps": 1000000,
+  "evaluate_freq": 50000.0,
+  "policy_dist": "Gaussian",
+  "batch_size": 4096,
+  "mini_batch_size": 128,
+  "hidden_width": 64,
+  "lr_a": 0.0003,
+  "lr_c": 0.0003,
+  "gamma": 0.99,
+  "lamda": 0.95,
+  "epsilon": 0.2,
+  "K_epochs": 10,
+  "use_adv_norm": true,
+  "use_state_norm": true,
+  "use_reward_scaling": true,
+  "entropy_coef": 0.01,
+  "use_lr_decay": true,
+  "use_grad_clip": true,
+  "set_adam_eps": true,
+  "seed": 10,
+  "POLICEd": false,
+  "enlarging_buffer": false,
+  "max_iter_enlargment": 10000,
+  "y_target": 0.0,
+  "y_min": -100.0,
+  "y_max": 0.0,
+  "y_dot_max": 10.0,
+  "s2_min": 0.001,
+  "s3_min": -0.6853981633974483,
+  "s3_max": 0.7853981633974483,
+  "freq_reset_in_buffer": 50,
+  "model": "Shuttle",
+  "nb_buffer_partitions": 1,
+  "buffer_vertices": [
+    [
+      -100.0,
+      0.001,
+      -0.6853981633974483
+    ],
+    [
+      -100.0,
+      0.001,
+      0.7853981633974483
+    ],
+    [
+      -100.0,
+      10.0,
+      -0.6853981633974483
+    ],
+    [
+      -100.0,
+      10.0,
+      0.7853981633974483
+    ],
+    [
+      0.0,
+      0.001,
+      -0.6853981633974483
+    ],
+    [
+      0.0,
+      0.001,
+      0.7853981633974483
+    ],
+    [
+      0.0,
+      0.0,
+      -0.6853981633974483
+    ],
+    [
+      0.0,
+      0.0,
+      0.7853981633974483
+    ]
+  ],
+  "state_dim": 3,
+  "action_dim": 1,
+  "max_action": 1,
+  "total_steps": 298677,
+  "state_norm_n": 2063304,
+  "state_norm_mean": [
+    [
+      -131.56983108935427,
+      94.78410226421978,
+      -0.2574878266886644
+    ]
+  ],
+  "state_norm_S": [
+    [
+      22915166214.741093,
+      4687692119.162225,
+      48729.986192169825
+    ]
+  ],
+  "state_norm_std": [
+    [
+      105.38526594065617,
+      47.66481700297261,
+      0.1536797106295899
+    ]
+  ]
+}

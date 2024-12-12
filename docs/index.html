@@ -205,10 +205,11 @@
 </section>
 
 
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <div class="columns is-centered has-text-centered">
+	
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
           <h2 class="title">Guaranteeing a soft landing for the Space Shuttle</h2>
 	    <div class="content has-text-justified">
               <p>
@@ -267,21 +268,35 @@
 </section>
 <!-- End image carousel -->
 
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video poster="" id="tree" autoplay controls muted loop width="1200" height="1728">
+        <source src="static/videos/POLICEd_shuttle_10006.mp4" type="video/mp4">
+      </video>
+      <h4 class="subtitle has-text-centered">
+        POLICEd soft landing of the space shuttle from 10,000 ft.
+      </h4>
+    </div>
+  </div>
+</section>
 
-
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div class="columns is-centered">
+           
+   
+<section class="section hero is-small">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
       <h2 class="title">Guaranteed stabilization of the inverted pendulum</h2>
 	 <div class="content has-text-justified">
           <p>
 	    The difficulty with the inverted pendulum is enlarging the stability region and guaranteeing the constraint respect for a wide range of initial conditions.
 	    Both the baseline PPO and POLICEd version easily stabilize the pendulum when starting near the equilibrium, but they differ on more demanding initial conditions.
 	  </p>
-	</div> 
+	</div>
+      </div>
 
-	<div style="width:480px; float:left;"> 
+	<div style="width:480px; float:left; margin-bottom: 1cm;"> 
 	<video poster="" id="tree" autoplay controls muted loop width="480" height="480">
 	  <source src="static/videos/pendulum_baseline.mp4" type="video/mp4">
 	   </video>
@@ -289,7 +304,7 @@
 	         Baseline PPO controller starting with a high velocity fails.
 	   </h4>
 	</div>
-	<div style="width:480px; float:right;"> 
+	<div style="width:480px; float:right; margin-bottom: 1cm;"> 
 	<video poster="" id="tree" autoplay controls muted loop width="480" height="480">
 	  <source src="static/videos/pendulum_POLICEd.mp4" type="video/mp4">
 	   </video>
@@ -297,9 +312,9 @@
 	         POLICEd controller starting from the same state stabilizes the pendulum.
 	   </h4>
 	</div>
-	<div style="margin-bottom: 1cm;"></div>
+	<div style=""></div>
       <img src="static/images/pendulum_multi_phase.png" alt="space shuttle" style="height:300px !important; display:block !important; margin:auto !important;"/>
-      </div>
+      
       </div>
     </div>
   </section>

@@ -192,6 +192,13 @@
 	We use the <a href="#POLICE">POLICE</a> algorithm to make our policy affine inside buffer region $\mathcal{B}$.
           </p>
         </div>
+	<div class="content has-text-justified">
+          <p>
+		We implemented our approach on two environments: the Gym inverted pendulum and a Space Shuttle landing scenario.
+		We trained <a href="#PPO">PPO</a> policies for both tasks with additional negative rewards to promote constraint respect.
+		We augment the PPO policies with our POLICEd RL to bring constraint violations to zero.
+	  </p>
+	</div>
       </div>
     </div>
   </div>
@@ -201,7 +208,14 @@
 <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title">Guaranteeing a soft landing for the space shuttle</h2>
+      <h2 class="title">Guaranteeing a soft landing for the Space Shuttle</h2>
+	  <div class="content has-text-justified">
+          <p>
+		The Space Shuttle soft landing scenario requires to bring the vehicle to the ground with a vertical velocity larger than -6ft/s.
+		Such a soft landing is notoriously difficult due to the bad gliding performance of the <a href="#Shuttle">Space Shuttle</a> which famously "flies like a brick".
+		The small vertical speed $\dot h$ also translates to a small flight path angle $\gamma$.
+	  </p>
+	</div>  
        <img src="static/images/Shuttle-Diagram-3.png" alt="space shuttle" style="height:300px !important; display:block !important; margin:auto !important;"/>
       </div>
     </div>
@@ -216,31 +230,32 @@
        <div class="item">
         <img src="static/images/shuttle_phase_base_POLICEd.svg" alt="phase portrait" style="height:400px !important; display:block !important; margin:auto !important;"/>
         <h4 class="subtitle has-text-centered">
-          Phase portrait of the space shuttle landing with <strong><span style="color:green;">green</span></strong> buffer.
+          Phase portrait of the Space Shuttle landing with <strong><span style="color:green;">green</span></strong> buffer. <br>
+	  Soft landings correspond to the <strong><span style="color:pink;">pink</span></strong> target region.
         </h4>
       </div>
       <div class="item">
         <img src="static/images/shuttle_h.svg" alt="shuttle altitude" style="height:400px !important; display:block !important; margin:auto !important;"/>
         <h4 class="subtitle has-text-centered">
-          Altitude of the space shuttle.
+          Altitude of the Space Shuttle.
         </h4>
       </div>
       <div class="item">
         <img src="static/images/shuttle_v.svg" alt="shuttle velocity" style="height:400px !important; display:block !important; margin:auto !important;"/>
         <h4 class="subtitle has-text-centered">
-          Velocity of the space shuttle.
+          Velocity of the Space Shuttle.
         </h4>
      </div>
      <div class="item">
       <img src="static/images/shuttle_gamma.svg" alt="shuttle flight path angle" style="height:400px !important; display:block !important; margin:auto !important;"/>
       <h4 class="subtitle has-text-centered">
-          Flight path angle of the space shuttle.
+          Flight path angle of the Space Shuttle.
       </h4>
     </div>
     <div class="item">
       <img src="static/images/shuttle_alpha.svg" alt="shuttle angle of attack" style="height:400px !important; display:block !important; margin:auto !important;"/>
        <h4 class="subtitle has-text-centered">
-          Angle of attack of the space shuttle.
+          Angle of attack of the Space Shuttle.
       </h4>
     </div>
   </div>
@@ -255,6 +270,30 @@
   <div class="hero-body">
     <div class="container">
       <h2 class="title">Guaranteed stabilization of the inverted pendulum</h2>
+	 <div class="content has-text-justified">
+          <p>
+	    The difficulty with the inverted pendulum is enlarging the stability region and guaranteeing the constraint respect for a wide range of initial conditions.
+	    Both the baseline PPO and POLICEd version easily stabilize the pendulum when starting near the equilibrium, but they differ on more demanding initial conditions.
+	  </p>
+	</div> 
+
+	<div style="width:480px; float:left;"> 
+	<video poster="" id="tree" autoplay controls muted loop width="480" height="480">
+	  <source src="static/videos/pendulum_baseline.mp4" type="video/mp4">
+	   </video>
+	   <h4 class="subtitle has-text-centered">
+	         Baseline PPO controller starting with a high velocity fails.
+	   </h4>
+	</div>
+	<div style="width:480px; float:left;"> 
+	<video poster="" id="tree" autoplay controls muted loop width="480" height="480">
+	  <source src="static/videos/pendulum_POLICEd.mp4" type="video/mp4">
+	   </video>
+	   <h4 class="subtitle has-text-centered">
+	         POLICEd controller starting from the same state stabilizes the pendulum.
+	   </h4>
+	</div>
+	    
       <img src="static/images/pendulum_multi_phase.png" alt="space shuttle" style="height:300px !important; display:block !important; margin:auto !important;"/>
       </div>
     </div>
@@ -337,6 +376,14 @@
   <div class="container is-max-desktop content">
     <h2 class="title">References</h2>
     <dl>
+	<dt><strong>[Space Shuttle]</strong></dt>
+	<dd>
+	  <div class="reference" id="Shuttle">
+	    Ali Heydari and S. N. Balakrishnan,
+	    <a href="https://arc.aiaa.org/doi/pdf/10.2514/6.2011-6641" target="_blank" rel="noopener noreferrer">Optimal Online Path Planning for Approach and Landing Guidance</a>,
+	    AIAA Atmospheric Flight Mechanics Conference, 2011.
+	  </div>
+	</dd>
       <dt><strong>[POLICEd RL]</strong></dt>
 	<dd>
 	  <div class="reference" id="POLICEd RL">
@@ -353,12 +400,12 @@
 	    IEEE International Conference on Acoustics, Speech and Signal Processing, 2023.
 	  </div>
 	</dd>
-	<dt><strong>[TD3]</strong></dt>
+	<dt><strong>[PPO]</strong></dt>
 	<dd>
-	  <div class="reference" id="TD3">
-	    Scott Fujimoto, Herke Hoof, and David Meger,
-	    <a href="https://proceedings.mlr.press/v80/fujimoto18a.html" target="_blank" rel="noopener noreferrer">Addressing function approximation error in actor-critic methods</a>,
-	    International Conference on Machine Learning (ICML), 2018.
+	  <div class="reference" id="PPO">
+	    John Schulman, Filip Wolski, Prafulla Dhariwal, Alec Radford, and Oleg Klimov
+	    <a href="https://arxiv.org/pdf/1707.06347" target="_blank" rel="noopener noreferrer">Proximal Policy Optimization Algorithms</a>,
+	    OpenAI, 2017.
 	  </div>
 	</dd>
 	

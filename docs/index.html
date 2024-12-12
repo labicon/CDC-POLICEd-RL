@@ -178,9 +178,9 @@
           </p>
 	</div>	
         <img src="static/images/schema.png" alt="POLICEd RL illustration" style="height:300px !important; display:block !important; margin:auto !important;"/>
-	<div class="content has-text-justified">
+	<div class="content has-text-justified" style="margin-top: 10px;">
           <p>
-         Phase portrait of constrained output $y$ illustrating our High Relative Degree POLICEd RL method on a system of relative degree $2$.
+        Phase portrait of constrained output $y$ illustrating our <strong>High Relative Degree POLICEd RL</strong> method on a system of relative degree $2$.
 	To prevent states from violating constraint $y \leq y_{max}$ (<strong><span style="color:PaleVioletRed;">red dashed line</span></strong>), our policy guarantees that
 	trajectories entering buffer region $\mathcal{B}$ (<strong><span style="color:LightSeaGreen;">blue</span></strong>) cannot leave it through its upper bound
 	(<strong><span style="color:Blue;">blue dotted line</span></strong>).
@@ -271,12 +271,12 @@
 <section class="hero is-light">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop width="556" height="800">
-        <source src="static/videos/POLICEd_shuttle_10006.mp4" type="video/mp4">
-      </video>
       <h4 class="subtitle has-text-centered">
         POLICEd soft landing of the space shuttle from the full 10,000 ft.
       </h4>
+      <video poster="" id="tree" autoplay controls muted loop width="556" height="800">
+        <source src="static/videos/POLICEd_shuttle_10006.mp4" type="video/mp4">
+      </video>
     </div>
   </div>
 </section>
@@ -305,20 +305,21 @@
     <div class="hero-body"> 
       <div style="display: inline">
 	<div style="width:300px; display: inline-block; float:left; margin-right: 100px;"> 
+	<h4 class="subtitle has-text-centered">
+	  <strong>Baseline</strong> PPO controller starting with a high velocity fails.
+	</h4>
 	<video poster="" id="tree" autoplay controls muted loop width="300" height="300">
 	  <source src="static/videos/pendulum_baseline.mp4" type="video/mp4">
-	   </video>
-	   <h4 class="subtitle has-text-centered">
-	         Baseline PPO controller starting with a high velocity fails.
-	   </h4>
+	</video>   
 	</div>
+	
 	<div style="width:300px; display: inline-block; float:right;"> 
+	<h4 class="subtitle has-text-centered">
+	  <strong>POLICEd</strong> controller starting from the same state succeeds.
+	</h4>
 	<video poster="" id="tree" autoplay controls muted loop width="300" height="300">
 	  <source src="static/videos/pendulum_POLICEd.mp4" type="video/mp4">
-	   </video>
-	   <h4 class="subtitle has-text-centered">
-	         POLICEd controller starting from the same state succeeds.
-	   </h4>
+	</video> 
 	</div>
       </div>
     </div>
